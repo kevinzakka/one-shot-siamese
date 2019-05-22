@@ -33,7 +33,7 @@ def main(args):
     else:
         filename = logs_dir + 'valid.csv'
     df = pd.read_csv(filename, header=None, names=['iter', 'metric'])
-    metric = df['metric'].data
+    metric = df['metric']
 
     fig, ax = plt.subplots(figsize=(15, 8))
     rolling_mean = np.mean(rolling_window(metric, 50), 1)
